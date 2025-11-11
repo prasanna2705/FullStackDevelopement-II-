@@ -1,1 +1,130 @@
+1) Basic React, JSX, Components
 
+Q1. What is React?
+React is a JavaScript library used to build interactive User Interfaces, mainly single page applications.
+
+Q2. What is JSX?
+JSX allows us to write HTML-like code inside JavaScript. It makes UI code easier to read and understand.
+
+Q3. Why do we need Babel in React?
+Because browsers cannot directly understand JSX. Babel converts JSX into JavaScript.
+
+Q4. What is a Component?
+A Component is a reusable UI block. Example: Navbar, Button, Profile card.
+
+Q5. Types of Components in React?
+Function Component (commonly used now)
+Class Component
+
+Q6. How do you create a Function Component?
+function Hello(){
+  return <h1>Hello!</h1>
+}
+
+
+Q7. How do you create a Class Component?
+class Hello extends React.Component{
+  render(){ return <h1>Hello!</h1> }
+}
+
+2) Props, State, Events, Styling
+Q8. What are Props?
+Props are inputs to Components. They allow data to be passed from parent to child.
+
+Q9. Are Props mutable?
+No. Props are read-only.
+
+Q10. What is State?
+State represents data that can change over time in a component.
+
+Q11. How do you declare State in Function Components?
+const [count, setCount] = useState(0);
+
+Q12. What is the difference between Props and State?
+Props	                    State
+Passed from parent	Managed inside component
+Read-only          	Mutable
+
+Q13. How do you handle events in React?
+<button onClick={handleClick}>Click</button>
+
+Q14. How to apply CSS in React?
+Inline styles
+External CSS file
+CSS Modules
+Styled Components / Tailwind
+
+3) Rendering, Lists, Forms
+Q15. What is Conditional Rendering?
+Rendering UI based on conditions:
+{ isLogged ? <Home/> : <Login/> }
+
+Q16. How do you display lists in React?
+items.map(item => <li>{item}</li>)
+
+
+Q17. Why do we use key inside map lists?
+To uniquely identify elements and avoid unnecessary re-rendering.
+
+Q18. How do you handle forms in React?
+<input value={name} onChange={(e)=>setName(e.target.value)}/>
+
+4) React Router
+Q19. What is React Router used for?
+For navigating between pages in a Single Page Application.
+
+Q20. How do you install React Router?
+npm install react-router-dom
+
+
+Q21. Basic example of Routing
+<BrowserRouter>
+ <Routes>
+  <Route path="/" element={<Home/>}/>
+  <Route path="/about" element={<About/>}/>
+ </Routes>
+</BrowserRouter>
+
+5) Hooks & Data Sharing
+Q22. What is a Hook?
+Hooks are functions provided by React to use state and lifecycle features in function components.
+
+Q23. Name commonly used hooks.
+useState
+useEffect
+useContext
+
+Q24. What is useEffect used for?
+To perform side effects, like fetching data, timers, API calls.
+
+Q25. How do components share data?
+Props (Parent to Child)
+Context API (Global level)
+Redux / Zustand (State management libraries)
+
+6) Real Application Questions
+Q26. How does React communicate with backend?
+Using REST APIs via fetch or axios.
+
+Q27. What is SPA (Single Page Application)?
+An app that doesn’t reload entire pages, only updates required UI parts.
+
+Q28. Why is React preferred?
+Fast rendering (Virtual DOM)
+Component reusability
+Strong community & ecosystem
+
+
+
+
+What is Rendering in React? 
+
+Rendering in React is the process of taking the React component's output (which looks like HTML written using JSX) and converting it into actual HTML elements that are displayed on the web page inside the browser.
+React renders UI inside the root element:
+In public/index.html, there is an element:
+<div id="root"></div>
+App.js → JSX → Babel → Virtual DOM → Real DOM → Browser Screen 
+
+What is Virtual DOM?
+
+Virtual DOM is a lightweight copy of the real DOM that React uses to update UI faster. It compares changes and updates only the required parts of the page, not the whole page.
