@@ -1,0 +1,48 @@
+src/App.js:
+import React from 'react';
+import './App.css';
+
+// Functional component that returns HTML-like JSX
+function App() {
+  return (
+    <div className="app-container">
+      <header>
+        <h1>Hello React Lab External</h1>
+      </header>
+
+      <main>
+        <p>This is simple HTML rendered inside a React component.</p>
+
+        <section>
+          <h2>Features demonstrated</h2>
+          <ul>
+            <li>JSX syntax (looks like HTML)</li>
+            <li>Component-based rendering</li>
+            <li>CSS import and styling</li>
+          </ul>
+        </section>
+
+        <footer>
+          <small>Good luck on your exam!</small>
+        </footer>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+
+src/index.js:
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import './index.css';
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+  // StrictMode is optional but recommended for development
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
